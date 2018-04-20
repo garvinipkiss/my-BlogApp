@@ -1,12 +1,13 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Blogger a Blogging Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Blogger Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android  Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <title>BlogApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href='//fonts.googleapis.com/css?family=Open+Sans:700,700italic,800,300,300italic,400italic,400,600,600italic' rel='stylesheet' type='text/css'>
 <!--Custom-Theme-files-->
@@ -23,143 +24,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			});
 </script>
-
-</head>
 <body>
-	<!-- header-section-starts -->
-      <div class="h-top" id="home">
-		   <div class="top-header">
-				  <ul class="cl-effect-16 top-nag">
-						<li><a href="registration.html" data-hover="Registration">Registration</a></li>
-						<li><a href="about.html" data-hover="About">About</a></li>
-						<li><a href="services.html" data-hover="SERVICES">SERVICES</a></li>
-						<li><a href="login.html" data-hover="Login">Login</a></li>
-						<li><a href="contact.html" data-hover="CONTACT">Contact</a></li>
-					</ul>
-					<div class="search-box">
-					    <div class="b-search">
-								<form>
-										<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-										<input type="submit" value="">
-								</form>
-							</div>
-						</div>
 
-					<div class="clearfix"></div>
-				</div>
-       </div>
-	<div class="full">
-			<div class="col-md-3 top-nav">
-				     <div class="logo">
-						<a href="index.html"><h1>Blogger</h1></a>
-					</div>
-					<div class="top-menu">
-					 <span class="menu"> </span>
-
-					<ul class="cl-effect-16">
-						<li><a class="active" href="index.html" data-hover="HOME">Home</a></li>
-						<li><a href="about.html" data-hover="About">About</a></li>
-						<li><a href="login.html" data-hover="Grids">Grids</a></li>
-						<li><a href="services.html" data-hover="Services">Services</a></li>
-						<li><a href=".html" data-hover="Gallery">Gallery</a></li>
-						<li><a href="contact.html" data-hover="CONTACT">Contact</a></li>
-					</ul>
-					<!-- script-for-nav -->
-					<script>
-						$( "span.menu" ).click(function() {
-						  $( ".top-menu ul" ).slideToggle(300, function() {
-							// Animation complete.
-						  });
-						});
-					</script>
-				<!-- script-for-nav -->
-					<ul class="side-icons">
-							<li><a class="fb" href="#"></a></li>
-							<li><a class="twitt" href="#"></a></li>
-							<li><a class="goog" href="#"></a></li>
-							<li><a class="drib" href="#"></a></li>
-					   </ul>
-			    </div>
-			</div>
-	<div class="col-md-9 main">
-		<!--banner-section-->
-		<div class="banner-section">
-		   <h3 class="tittle">General <i class="glyphicon glyphicon-picture"></i></h3>
-			<div class="banner">
-                 <div  class="callbacks_container">
-					<ul class="rslides" id="slider4">
-					       <li>
-							  <img src="images/1.jpg" class="img-responsive" alt="" />
-
-							</li>
-							<li>
-								 <img src="images/2.jpg" class="img-responsive" alt="" />
-
-
-							</li>
-							<li>
-							 <img src="images/3.jpg" class="img-responsive" alt="" />
-
-
-							</li>
-							<li>
-							 <img src="images/3.jpg" class="img-responsive" alt="" />
-
-
-							</li>
-						</ul>
-					</div>
-					<!--banner-->
-	  			<script src="js/responsiveslides.min.js"></script>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager:true,
-			        nav:true,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-
-			    });
-			  </script>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Garvo's maneno</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Quote</a></li>
+          <li><a href="#">favourites</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
 <!--/footer-->
      <div class="footer">
        <div class="footer-top">
           <div class="col-md-4 footer-grid">
-             <h4>find me at </h4>
+             <h4>services </h4>
                 <ul class="bottom">
-             <li>linked in</li>
-             <li>github</li>
+             <li>i create awesome web apps</li>
+             <li>review codes</li>
            </ul>
           </div>
           <div class="col-md-4 footer-grid">
              <h4>Message Us Now</h4>
                   <ul class="bottom">
                <li><i class="glyphicon glyphicon-home"></i>Available 24/7 </li>
-             <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">mail@example.com</a></li>
+             <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:info@example.com">garvinipkiss@mail.com</a></li>
              </ul>
           </div>
         <div class="col-md-4 footer-grid">
              <h4>Address Location</h4>
                  <ul class="bottom">
-               <li><i class="glyphicon glyphicon-map-marker"></i>Ngong road,@Ngonglane plaza, 1st floor"Moringa school"  </li>
-             <li><i class="glyphicon glyphicon-earphone"></i>phone: (+254) 700-509-740 </li>
+               <li><i class="glyphicon glyphicon-map-marker"></i>Ngong Road, Ngonglane plaza, 1st Floor"moringa school" </li>
+             <li><i class="glyphicon glyphicon-earphone"></i>phone: (254) 700-509-740 </li>
              </ul>
           </div>
         <div class="clearfix"> </div>
        </div>
      </div>
   <div class="copy">
-      <p>&copy; 2018 . All Rights Reserved | Designed by <a>Garvin</a> </p>
+      <p>&copy; 2018 My BlogApp. All Rights Reserved | Design by <a>Garvin</a> </p>
   </div>
  <div class="clearfix"> </div>
 </div>
