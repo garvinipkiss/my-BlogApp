@@ -75,16 +75,53 @@
 </nav>
 </head>
 <body>
-<style>
-.mySlides {display:none;}
-</style>
-<body>
-<div class="Garvin" style="max-width:500px">
-<img class="mySlides" src="static/images/414512.jpg" style="width:300%">
-<img class="mySlides" src="static/images/mini.jpg" style="width:300%">
-<img class="mySlides" src="static/images/709937.jpg" style="width:300%">
-</div>
+  <header id="myCarousel" class="carousel slide">
 
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for Slides -->
+      <div class="carousel-inner">
+
+          <div class="item active">
+              <!-- Set the first background image using inline CSS below. -->
+              <div class="fill" style="background-image:url(static/images/414512.jpg);"></div>
+          </div>
+          <div class="item">
+              <!-- Set the second background image using inline CSS below. -->
+              <div class="fill" style="background-image:url(static/images/mini.jpg);"></div>
+          </div>
+          <div class="item">
+              <!-- Set the third background image using inline CSS below. -->
+              <div class="fill" style="background-image:url(static/images/709937.jpg);"></div>
+          </div>
+      </div>
+  </header>
+<style>
+  .carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+</style>
 <script>
 var myIndex = 0;
 carousel();

@@ -4,7 +4,7 @@ from flask_login import login_required,current_user
 from ..models import User,Blog,Comment,Role
 from .forms import BlogForm,CommentForm,DeleteBlog
 from .. import db
-import markdown2
+
 
 
 @main.route('/')
