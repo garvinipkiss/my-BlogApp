@@ -32,7 +32,7 @@ def blog(id):
   form = CommentForm()
   title ="Gamers Blogs"
 
-  return render_template('admin/blog_post.html', title =title, blogs=blogs,comments=comments,comment_form= form)
+  return render_template('admin/blog_post.html', title =title, blogs=blogs,comments=comments,comment_form=comment_form)
 
 @admin.route('/blog/new', methods = ["GET", "POST"])
 def new_blog():
@@ -45,7 +45,7 @@ def new_blog():
     title = form.title.data
     content = form.content.data
 
-    new_blog = Blog(title =title, content=content, user_id = current_user.id)
+    new_blog = Blog(title =title, content=content, user_id = user_id)
 
     new_blog.save_blog()
 
@@ -53,7 +53,7 @@ def new_blog():
 
   title = "New Blog"
 
-  return render_template('admin/new_blog.html',title = title, blog_form = form)
+  return render_template('admin/new_blog.html',title = title, blog_form = blog_form)
 
 @admin.route('/comment/<int:id>')
 def single_comment(id):

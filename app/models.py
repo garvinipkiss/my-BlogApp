@@ -14,14 +14,14 @@ def load_user(user_id):
 
 
 
-class User(UserMixin, db.Model):
+#class User(UserMixin, db.Model):
   __tablename__ = 'users'
   id =db.Column(db.Integer,primary_key =True)
   username = db.Column(db.String(255),index = True)
   email = db.Column(db.String(255),unique = True,index = True)
   role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
   password_hash =db.Column(db.String(255))
-  blogs = db.relationship('Blog', backref='user', lazy ='dynamic',cascade ="all,delete-orphan")
+  blogapp = db.relationship('Blog', backref='user', lazy ='dynamic',cascade ="all,delete-orphan")
   comments = db.relationship('Comment', backref='user', lazy='dynamic',cascade ="all,delete-orphan")
   is_admin = db.Column(db.Boolean,default=False)
 
@@ -42,7 +42,7 @@ class User(UserMixin, db.Model):
   def __repr__(self):
     return 'User'
 
-class Role(db.Model):
+#class Role(db.Model):
   __tablename__ = 'roles'
   id = db.Column(db.Integer,primary_key = True)
   name = db.Column(db.String(255))
@@ -52,9 +52,9 @@ class Role(db.Model):
   def __repr__(self):
     return 'User{self.name}'
 
-class Blog(db.Model):
+#class Blog(db.Model):
 
-  __tablename__ = 'blogs'
+  __tablename__ = 'blogapp'
   id = db.Column(db.Integer,primary_key=True)
   title = db.Column(db.String)
   content = db.Column(db.String)
@@ -78,7 +78,7 @@ class Blog(db.Model):
     blogs = Blog.query.all()
     return blogs
 
-class Comment(db.Model):
+#class Comment(db.Model):
 
   __tablename__ = 'comments'
   id = db.Column(db.Integer,primary_key=True)
