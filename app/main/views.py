@@ -4,7 +4,6 @@ from flask_login import login_required,current_user
 from ..models import User,Blog,Comment,Role
 from .forms import BlogForm,CommentForm,DeleteBlog
 from .. import db
-import markdown2
 
 
 @main.route('/')
@@ -12,7 +11,7 @@ def index():
 
   blogs = Blog.get_blog()
   title ="Gamers Blogs"
-  return render_template('index.html', title=title,blogs=blogs)
+  return render_template('index.html', title=title,GamersBlogs=Gamersblogs)
 
 @main.route('/admin/dashboard')
 @login_required
