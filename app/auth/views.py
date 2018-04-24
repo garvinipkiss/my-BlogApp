@@ -25,7 +25,7 @@ def login():
 
         flash('Invalid username or password')
 
-    title="Garvo'smaneno login"
+    title="Gamers Blogs login"
 
     return render_template('auth/login.html', login_form=login_form, title=title)
 
@@ -37,7 +37,7 @@ def logout():
     return redirect(url_for("main.index"))
 
 
-@auth.route('/signup', methods=["GET", "POST"])
+@auth.route('/register', methods=["GET", "POST"])
 def register():
     form = RegistrationForm()
 
@@ -52,6 +52,6 @@ def register():
 
         return redirect(url_for('auth.login'))
 
-    title="Garvo'smaneno sign up"
+    title="Gamers Blogs sign up"
 
     return render_template('auth/signup.html', registration_form=form, title=title)

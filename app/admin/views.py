@@ -30,7 +30,7 @@ def blog(id):
   blogs = Blog.query.get(id)
   comments = Comment.get_comments(id)
   form = CommentForm()
-  title ="Blogs"
+  title ="Gamers Blogs"
 
   return render_template('admin/blog_post.html', title =title, blogs=blogs,comments=comments,comment_form= form)
 
