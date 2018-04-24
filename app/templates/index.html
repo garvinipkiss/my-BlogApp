@@ -50,6 +50,18 @@
     display: none;
   }
 }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
 </style>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -68,39 +80,61 @@
       <li><a href="#">Gamers</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% if current_user.is_authenticated %}
+      <li><a href="{{url_for('auth.logout')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        {% else %}
+      <li><a href="{{url_for('auth.login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
     </ul>
   </div>
 </nav>
 </head>
 <body>
+  <div class="wrapper row3">
+    <section class="hoc container clear">
+      <div class="btmspace-80 center">
+        <h3 class="nospace">Welcome to Garvo's maneno blog app</h3>
+        <p class="nospace">A place where people can comment and view on different blogs.</p>
+      </div>
+      <div class="group">
+        <article class="one_quarter first">
+          <time class="block font-xs" datetime="#trends">#trends</time>
+          <h4 class="nospace font-x1">top trending blogs</h4>
+          <p class="btmspace-30">here are top of the chats&hellip;</p>
+          <a href="#"><img class="btmspace-30" src="images/demo/380x320.png" alt=""></a>
+          <footer><a href="#">Read More &raquo;</a></footer>
+        </article>
+        <article class="one_quarter">
+          <time class="block font-xs" datetime="gamers blog">gamers blog</time>
+          <h4 class="nospace font-x1">top awesome games</h4>
+          <p class="btmspace-30">share and view awesome games with us&hellip;</p>
+          <a href="#"><img class="btmspace-30" src="images/demo/380x320.png" alt=""></a>
+          <footer><a href="#">Read More &raquo;</a></footer>
+        </article>
+        <article class="one_quarter">
+          <time class="block font-xs" datetime="fashion blog ">fashion blog</time>
+          <h4 class="nospace font-x1">clad with us</h4>
+          <p class="btmspace-30">fashion is not a display of wealth, But an expression of imagination.&hellip;</p>
+          <a href="#"><img class="btmspace-30" src="static/images/380x320.png" alt=""></a>
+          <footer><a href="#">Read More &raquo;</a></footer>
+        </article>
+        <article class="one_quarter">
+          <time class="block font-xs" datetime="music blog">music blog</time>
+          <h4 class="nospace font-x1">music talks</h4>
+          <p class="btmspace-30">welcome to our music arena view and share your taste&hellip;</p>
+          <a href="#"><img class="btmspace-30" src="static/images/.jpg" alt=""></a>
+          <footer><a href="#">Read More &raquo;</a></footer>
+        </article>
+      </div>
+    </section>
+  </div>
 <style>
-.mySlides {display:none;}
-</style>
-<body>
-<div class="Garvin" style="max-width:500px">
-<img class="mySlides" src="static/images/414512.jpg" style="width:300%">
-<img class="mySlides" src="static/images/mini.jpg" style="width:300%">
-<img class="mySlides" src="static/images/709937.jpg" style="width:300%">
-</div>
-
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
+   body{
+     background-image: url(../static/images/414512.jpg);
+     background-attachment: fixed;
+     color: white;
   }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 5000); // Change image every 5 seconds
-}
-</script>
+</style>
 <!--/footer-->
      <div class="footer">
        <div class="footer-top">
@@ -131,28 +165,6 @@ function carousel() {
   <div class="copy">
       <p>&copy; 2018 My BlogApp. All Rights Reserved | Design by <a>Garvin</a> </p>
   </div>
- <div class="clearfix"> </div>
-</div>
-<div class="clearfix"> </div>
-</div>
-  <!--//footer-->
-    <!--start-smooth-scrolling-->
-          <script type="text/javascript">
-                $(document).ready(function() {
-                  /*
-                  var defaults = {
-                      containerID: 'toTop', // fading element id
-                    containerHoverID: 'toTopHover', // fading element hover id
-                    scrollSpeed: 1200,
-                    easingType: 'linear'
-                  };
-                  */
-
-                  $().UItoTop({ easingType: 'easeOutQuart' });
-
-                });
-              </script>
-  <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
+<!--/footer-->
 </body>
 </html>
