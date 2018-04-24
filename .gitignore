@@ -8,3 +8,8 @@ virtual/
 *.pyc
 start.sh
 
+
+virtual/
+*.pyc
+start.sh
+
